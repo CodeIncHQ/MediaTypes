@@ -12,7 +12,7 @@ The media types list is loaded once in memory. You can instantiate the class or 
 use CodeInc\MediaTypes\MediaTypes;
 
 // looking up the media type of a file, a path or an URL 
-// (or anything finishing by a filename extension)
+// (or anything finishing by an extension)
 MediaTypes::getFilenameMediaType('/path/to/a/picture.jpg'); // -> 'image/jpeg'
 
 // looking up the media type for an extension
@@ -45,6 +45,7 @@ The class implements [`ArrayAccess`](http://php.net/manual/fr/class.arrayaccess.
 <?php
 use CodeInc\MediaTypes\MediaTypes;
 $mediaTypes = new MediaTypes();
+
 // you can test the existence or either an extension or a media type
 var_dump(isset($mediaTypes['jpg'])); // -> true
 var_dump(isset($mediaTypes['image/jpeg'])); // -> true
