@@ -16,7 +16,7 @@ composer require codeinc/media-types
 
 ## Updating the internal media types list
 
-You can regenerate the internal media types list using the provided [`generate-media-types-list.php`](scripts/generate-media-types-list.php) script. The script is fetches the list from Apache's Subversion server (`https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types`), parses it and generates the local `assets/media-types.json` file. 
+You can regenerate the internal media types list using the provided [`scripts/generate-media-types-list.php`](scripts/generate-media-types-list.php) script. The script is fetches the list from Apache's Subversion server ([from here](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types)), parses it and generates the local `assets/media-types.json` file. 
 
 ```bash
 php scripts/generate-media-types-list.php
