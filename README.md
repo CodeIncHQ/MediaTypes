@@ -64,7 +64,7 @@ var_dump($mediaTypes['a-fake/media-type']; // -> null
 
 ## Installation
 
-This library is available through [Packagist](https://packagist.org/packages/codeinc/psmedia-types) and can be installed using [Composer](https://getcomposer.org/): 
+This library is available through [Packagist](https://packagist.org/packages/codeinc/media-types) and can be installed using [Composer](https://getcomposer.org/): 
 
 ```bash
 composer require codeinc/media-types
