@@ -21,7 +21,7 @@
 // Project:  MimeTypeLookup
 //
 declare(strict_types=1);
-namespace MediaTypeLookup;
+namespace MediaTypes;
 
 /*
  * Config
