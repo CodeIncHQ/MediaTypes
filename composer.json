@@ -1,6 +1,6 @@
 {
   "name": "codeinc/media-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A media / MIME type lookup tool",
   "homepage": "https://github.com/CodeIncHQ/MediaTypes",
   "type": "library",

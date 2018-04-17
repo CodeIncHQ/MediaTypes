@@ -62,6 +62,9 @@ class MediaTypesTest extends TestCase
     {
         self::assertNotNull(MediaTypes::getExtensionMediaType(self::JPEG_EXT));
         self::assertContains(self::JPEG_EXT, MediaTypes::getMediaTypeExtensions(self::JPEG_TYPE));
+        self::assertNotNull(MediaTypes::getFilenameMediaType('/path/to/an/image.jpg'));
+        self::assertNotNull(MediaTypes::getFilenameMediaType('an image.jpg'));
+        self::assertNotNull(MediaTypes::getFilenameMediaType('https://www.example.org/an%20image.jpg'));
     }
 
     /**

@@ -84,7 +84,7 @@ class MediaTypes implements \IteratorAggregate, \Countable, \ArrayAccess
      */
     public static function getFilenameMediaType(string $filename):?string
     {
-        if (preg_match('|\\.([^\\s]+$|u', $filename, $matches)) {
+        if (preg_match('|\\.([^.]+)$|u', $filename, $matches)) {
             return self::getExtensionMediaType($matches[1]);
         }
         return null;
