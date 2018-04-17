@@ -1,5 +1,4 @@
 /.idea
-.DS_Store
 /composer.lock
 /vendor
-/scripts/generate-media-types-list.php
+.DS_Store
