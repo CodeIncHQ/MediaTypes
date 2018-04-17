@@ -1,0 +1,33 @@
+{
+  "name": "codeinc/media-types",
+  "version": "1.0.0",
+  "description": "A media / MIME type lookup tool",
+  "homepage": "https://github.com/CodeIncHQ/MediaTypes",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  },
+  "autoload": {
+    "psr-4": {"CodeInc\\MediaTypes\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": { "CodeInc\\MediaTypes\\Tests\\": "tests/" }
+  },
+  "authors": [
+    {
+      "name": "Joan Fabrégat",
+      "email": "joan@codeinc.fr",
+      "homepage": "https://www.codeinc.fr",
+      "role": "developer"
+    }
+  ],
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    }
+  }
+}
