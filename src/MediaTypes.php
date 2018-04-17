@@ -156,18 +156,26 @@ class MediaTypes implements \IteratorAggregate, \Countable, \ArrayAccess
      */
     public function offsetExists($offset):bool
     {
-        return array_key_exists((string)$offset, self::getMediaTypes());
+        return array_key_exists((string)$offset, self::getMediaTypes())
+            || in_array((string)$offset, self::getMediaTypes());
     }
 
     /**
      * @inheritdoc
      * @param string $offset
-     * @return null|string
+     * @return null|string|array
      * @throws MediaTypesException
      */
-    public function offsetGet($offset):?string
+    public function offsetGet($offset)
     {
-        return self::getExtensionMediaType((string)$offset);
+        if (($mediaType = self::getExtensionMediaType((string)$offset)) !== null) {
+            return $mediaType;
+        }
+
+        if (($extensions = self::getMediaTypeExtensions((string)$offset)) !== null) {
+            return $extensions;
+        }
+        return null;
     }
 
     /**
