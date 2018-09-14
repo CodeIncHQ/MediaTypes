@@ -66,28 +66,30 @@ class MediaTypes implements \IteratorAggregate, \Countable, \ArrayAccess
     /**
      * Returns the media type for a given extension.
      *
-     * @param string $extension
+     * @param string $extension File type
+     * @param null|string $defaultMediaType Media type returned if the file's media type can not determined
      * @return null|string
      * @throws MediaTypesException
      */
-    public static function getExtensionMediaType(string $extension):?string
+    public static function getExtensionMediaType(string $extension, ?string $defaultMediaType = null):?string
     {
-        return self::getMediaTypes()[strtolower($extension)] ?? null;
+        return self::getMediaTypes()[strtolower($extension)] ?? $defaultMediaType;
     }
 
     /**
      * Returns the media type for a given file name.
      *
-     * @param string $filename
+     * @param string $filename File name or path (must include an extension)
+     * @param null|string $defaultMediaType Media type returned if the file's media type can not determined
      * @return null|string
      * @throws MediaTypesException
      */
-    public static function getFilenameMediaType(string $filename):?string
+    public static function getFilenameMediaType(string $filename, ?string $defaultMediaType = null):?string
     {
         if (preg_match('|\\.([^.]+)$|u', $filename, $matches)) {
             return self::getExtensionMediaType($matches[1]);
         }
-        return null;
+        return $defaultMediaType;
     }
 
     /**
